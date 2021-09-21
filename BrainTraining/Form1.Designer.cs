@@ -64,6 +64,7 @@ namespace BrainTraining
             0,
             0});
             this.Dificultad.ValueChanged += new System.EventHandler(this.Dificultad_ValueChanged);
+            this.Dificultad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Dificultad_KeyUp);
             // 
             // labelPuntos
             // 
@@ -79,7 +80,6 @@ namespace BrainTraining
             this.labelPuntos.TabIndex = 2;
             this.labelPuntos.Text = "0";
             this.labelPuntos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPuntos.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // timer1
             // 
@@ -144,7 +144,6 @@ namespace BrainTraining
             this.contador.TabIndex = 6;
             this.contador.Text = "30";
             this.contador.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.contador.Click += new System.EventHandler(this.contador_Click);
             // 
             // button1
             // 
@@ -180,6 +179,8 @@ namespace BrainTraining
             this.Controls.Add(this.Dificultad);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Dificultad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

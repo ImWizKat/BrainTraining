@@ -25,19 +25,9 @@ namespace BrainTraining
             InitializeComponent();
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void Dificultad_ValueChanged(object sender, EventArgs e)
         {
             diff= ((int)Dificultad.Value);
-        }
-
-        private void contador_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -72,6 +62,7 @@ namespace BrainTraining
                 int numUsuario = Convert.ToInt32(respuesta.Text);
                 if (numUsuario == calculaResultado())
                 {
+                    segundos++;
                     puntos++;
                     labelPuntos.Text = Convert.ToString(puntos);
                 }
@@ -97,6 +88,7 @@ namespace BrainTraining
         }
 
         private void reset() {
+            respuesta.Focus();
             respuesta.ResetText();
             timer1.Enabled = true;
             switch (diff) {
@@ -162,20 +154,20 @@ namespace BrainTraining
             op2 = aleatorio.Next(1, 20);
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
+        }
 
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter) reset();
+        }
 
-
-
-
-
-
-
-
-
-
-
-
+        private void Dificultad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) reset();
+        }
     }
 
   
