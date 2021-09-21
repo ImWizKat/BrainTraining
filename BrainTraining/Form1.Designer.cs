@@ -31,7 +31,7 @@ namespace BrainTraining
         {
             this.components = new System.ComponentModel.Container();
             this.Dificultad = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelPuntos = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.num1 = new System.Windows.Forms.Label();
             this.operador = new System.Windows.Forms.Label();
@@ -45,26 +45,41 @@ namespace BrainTraining
             // Dificultad
             // 
             this.Dificultad.Location = new System.Drawing.Point(268, 32);
+            this.Dificultad.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.Dificultad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.Dificultad.Name = "Dificultad";
             this.Dificultad.Size = new System.Drawing.Size(160, 20);
             this.Dificultad.TabIndex = 1;
+            this.Dificultad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.Dificultad.ValueChanged += new System.EventHandler(this.Dificultad_ValueChanged);
             // 
-            // label1
+            // labelPuntos
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Lime;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(301, 65);
-            this.label1.MaximumSize = new System.Drawing.Size(40, 40);
-            this.label1.MinimumSize = new System.Drawing.Size(100, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 100);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.labelPuntos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPuntos.AutoSize = true;
+            this.labelPuntos.BackColor = System.Drawing.Color.Lime;
+            this.labelPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPuntos.Location = new System.Drawing.Point(301, 65);
+            this.labelPuntos.MaximumSize = new System.Drawing.Size(40, 40);
+            this.labelPuntos.MinimumSize = new System.Drawing.Size(100, 100);
+            this.labelPuntos.Name = "labelPuntos";
+            this.labelPuntos.Size = new System.Drawing.Size(100, 100);
+            this.labelPuntos.TabIndex = 2;
+            this.labelPuntos.Text = "0";
+            this.labelPuntos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPuntos.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // timer1
             // 
@@ -121,6 +136,7 @@ namespace BrainTraining
             this.contador.BackColor = System.Drawing.Color.Lime;
             this.contador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contador.Location = new System.Drawing.Point(567, 65);
+            this.contador.Margin = new System.Windows.Forms.Padding(0);
             this.contador.MaximumSize = new System.Drawing.Size(40, 40);
             this.contador.MinimumSize = new System.Drawing.Size(100, 100);
             this.contador.Name = "contador";
@@ -146,6 +162,7 @@ namespace BrainTraining
             this.respuesta.Name = "respuesta";
             this.respuesta.Size = new System.Drawing.Size(104, 20);
             this.respuesta.TabIndex = 8;
+            this.respuesta.TextChanged += new System.EventHandler(this.respuesta_TextChanged);
             this.respuesta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.respuesta_KeyPress);
             // 
             // Form1
@@ -159,7 +176,7 @@ namespace BrainTraining
             this.Controls.Add(this.num2);
             this.Controls.Add(this.operador);
             this.Controls.Add(this.num1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelPuntos);
             this.Controls.Add(this.Dificultad);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -172,7 +189,7 @@ namespace BrainTraining
         #endregion
 
         private System.Windows.Forms.NumericUpDown Dificultad;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPuntos;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label num1;
         private System.Windows.Forms.Label operador;
